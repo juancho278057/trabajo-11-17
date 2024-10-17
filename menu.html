@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Galáctico</title>
+    <style>
+        body {
+            background-image: url('https://tse2.mm.bing.net/th?id=OIP.pfMcvraro-JtzOGGXSLhhwHaEK&pid=Api&P=0&h=180');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+            animation: backgroundAnimation 10s infinite alternate;
+        }
+        @keyframes backgroundAnimation {
+            0% { background-position: left top; }
+            100% { background-position: right bottom; }
+        }
+        #access-form {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            opacity: 0;
+            animation: fadeIn 2s forwards, moveDown 1s forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        @keyframes moveDown {
+            from { transform: translateY(-20px); }
+            to { transform: translateY(0); }
+        }
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            width: 80%;
+            border-radius: 5px;
+            border: none;
+            transition: transform 0.3s;
+        }
+        input:focus {
+            transform: scale(1.05);
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #218838;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="access-form">
+        <h2>Ingreso Galáctico</h2>
+        <input type="email" id="email" placeholder="Correo Electrónico" required><br>
+        <input type="text" id="username" placeholder="Nombre de Usuario" required><br>
+        <input type="number" id="age" placeholder="Edad" required><br>
+        <button onclick="validateAccess()">Ingresar</button>
+        <p id="error-message" style="color: red;"></p>
+    </div>
+
+    <script>
+        function validateAccess() {
+            const age = document.getElementById("age").value;
+            const errorMessage = document.getElementById("error-message");
+
+            if (age >= 18) {
+                window.location.href = "menu1.html";  // Redirigir al menú
+            } else {
+                errorMessage.textContent = "Lo siento, debes ser mayor de 18 años para ingresar.";
+            }
+        }
+    </script>
+</body>
+</html
